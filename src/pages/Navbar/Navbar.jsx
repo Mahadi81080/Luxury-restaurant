@@ -4,15 +4,15 @@ const Navbar = () => {
   const navLink = (
     <>
       <li>
-        <Link to='/'>Home</Link>
+        <Link className="font-semibold text-lg" to='/'>Home</Link>
       </li>
       <li>
-        <Link to='/update'>Update Profile</Link>
+        <Link className="font-semibold text-lg" to='/update'>Update Profile</Link>
       </li>
     </>
   );
   return (
-    <div>
+    <div className="mx-4">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -39,7 +39,7 @@ const Navbar = () => {
                 {navLink}
             </ul>
           </div>
-          <img className="w-1/3 h-14" src="https://i.postimg.cc/6qR610BC/logo.png" alt="" />
+          <img className="w-1/3 h-12" src="https://i.postimg.cc/6qR610BC/logo.png" alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -47,7 +47,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a className="btn bg-[#fea60d] text-white px-7">Button</a>
         </div>
       </div>
     </div>
