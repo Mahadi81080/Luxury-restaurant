@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import Footer from "../../Components/Footer";
 import Navbar from "../Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-  const { singIn, googleLogin, githubLogin } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
+  const { singIn, googleLogin, githubLogin,facebookLogin } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -17,9 +21,11 @@ const Login = () => {
     singIn(email, password)
       .then((result) => {
         console.log(result);
+        toast.success("Login Successfully");
       })
       .catch((error) => {
-        console.log(error);
+        console.error("Sign-in error:", error);
+        toast.error("invalid login information");
       });
   };
   return (
@@ -52,14 +58,24 @@ const Login = () => {
                     Password
                   </label>
                 </div>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="*****"
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
-                  {...register("password", { required: true })}
-                />
+                <div className="flex justify-center items-center">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    id="password"
+                    placeholder="*****"
+                    className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
+                    {...register("password", { required: true })}
+                  />
+                  <span
+                    onClick={() => {
+                      setShowPassword(!showPassword);
+                    }}
+                    className="-ml-6 text-lg"
+                  >
+                    {showPassword ? <IoMdEyeOff /> : <IoMdEye />}
+                  </span>
+                </div>
                 {errors.password && (
                   <span className="text-red-500">This field is required</span>
                 )}
@@ -69,6 +85,7 @@ const Login = () => {
               Sign in
             </button>
           </form>
+          <ToastContainer />
           <div className="flex items-center pt-4 space-x-1">
             <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
             <p className="px-3 text-sm dark:text-gray-600">
@@ -90,7 +107,7 @@ const Login = () => {
                 <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
               </svg>
             </button>
-            <button aria-label="Log in with Twitter" className="p-3 rounded-sm">
+            <button onClick={() => facebookLogin()} aria-label="Log in with Facebook" className="p-3 rounded-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -129,6 +146,7 @@ const Login = () => {
         </div>
       </div>
       <Footer></Footer>
+    
     </div>
   );
 };

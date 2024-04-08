@@ -1,4 +1,5 @@
 import {
+    FacebookAuthProvider,
     GithubAuthProvider,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -14,6 +15,7 @@ export const AuthContext = createContext(null);
 // Social auth provider
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
 
 const AuthProviders = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -47,6 +49,10 @@ return signOut(auth)
   const githubLogin = () => {
     return signInWithPopup(auth, githubProvider);
   };
+  // facebookLogIn
+  const facebookLogin = () => {
+    return signInWithPopup(auth, facebookProvider);
+  };
 
   const authInfo = {
     user,
@@ -54,7 +60,7 @@ return signOut(auth)
     singIn,
     logOut,
     googleLogin,
-    githubLogin
+    githubLogin,facebookLogin
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

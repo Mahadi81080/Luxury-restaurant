@@ -1,28 +1,41 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Footer from "../../Components/Footer";
 import Navbar from "../Navbar/Navbar";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 const Register = () => {
-    const {creatUser}=useContext(AuthContext)
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-      } = useForm()
-      const onSubmit= (data) =>{
-        const {email,password}=data
-        creatUser(email,password)
-        .then(result=>{
-            console.log(result);
-        })
-        .catch(error=>{
-            console.log(error);
-        })
-        
-      }
-       
+  const [showPassword, setShowPassword] = useState(false);
+  const { creatUser } = useContext(AuthContext);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    const { email, password } = data;
+    // Password verification
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+    if (!passwordRegex.test(password)) {
+      toast.error("Password must contain at least one lowercase letter, one uppercase letter, and be at least 6 characters long.");
+      return;
+    }
+    creatUser(email, password)
+      .then((result) => {
+        console.log(result);
+        toast.success("Registration successful!");
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error("An error occurred during registration.");
+      });
+  };
+
   return (
     <div>
       <Navbar></Navbar>
@@ -44,9 +57,10 @@ const Register = () => {
                   placeholder="Your name"
                   className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
                   {...register("FullName", { required: true })}
-                  
                 />
-                 {errors.FullName && <span className="text-red-500">This field is required</span>}
+                {errors.FullName && (
+                  <span className="text-red-500">This field is required</span>
+                )}
               </div>
               <div>
                 <label htmlFor="text" className="block mb-2 text-sm">
@@ -60,7 +74,9 @@ const Register = () => {
                   className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
                   {...register("image")}
                 />
-                 {errors.image && <span className="text-red-500">This field is required</span>}
+                {errors.image && (
+                  <span className="text-red-500">This field is required</span>
+                )}
               </div>
               <div>
                 <label htmlFor="text" className="block mb-2 text-sm">
@@ -74,7 +90,9 @@ const Register = () => {
                   className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
                   {...register("email", { required: true })}
                 />
-                {errors.email && <span className="text-red-500">This field is required</span>}
+                {errors.email && (
+                  <span className="text-red-500">This field is required</span>
+                )}
               </div>
               <div>
                 <div className="flex justify-between mb-2">
@@ -82,20 +100,38 @@ const Register = () => {
                     Password
                   </label>
                 </div>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="*****"
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
-                  {...register("password", { required: true })}
-                />
-                 {errors.password && <span className="text-red-500">This field is required</span>}
+                <div className="flex justify-center items-center">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    id="password"
+                    placeholder="*****"
+                    className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
+                    {...register("password", { required: true })}
+                  />
+                  <span
+                    onClick={() => {
+                      setShowPassword(!showPassword);
+                    }}
+                    className="-ml-6 text-lg"
+                  >
+                    {showPassword ? <IoMdEyeOff /> : <IoMdEye />}
+                  </span>
+                </div>
+                {errors.password && (
+                  <span className="text-red-500">This field is required</span>
+                )}
               </div>
-              <div className="flex items-center gap-3">
-                <input type="checkbox" />
-                <p>Accept Term & Conditions</p>
-              </div>
+              <p className="px-6 text-sm text-center dark:text-gray-600">
+            Go to Login page
+            <Link
+              to="/login"
+              className="hover:underline dark:text-violet-600"
+            >
+              Login
+            </Link>
+            .
+          </p>
             </div>
             <div className="space-y-2">
               <div>
@@ -108,6 +144,7 @@ const Register = () => {
         </div>
       </div>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 };

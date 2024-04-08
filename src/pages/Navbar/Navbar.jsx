@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
-import { verifyBeforeUpdateEmail } from "firebase/auth";
 
 const Navbar = () => {
   const navLink = (
@@ -73,7 +72,7 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+                className="mt-3 z-[2] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
               >
                 <li>
                   <button className="btn btn-sm bg-[#fea60d] text-white">{user.displayName}</button>
