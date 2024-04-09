@@ -19,7 +19,7 @@ const Navbar = () => {
   );
   const { logOut, user } = useContext(AuthContext);
   return (
-    <div className="mx-4">
+    <div className="">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -46,11 +46,7 @@ const Navbar = () => {
               {navLink}
             </ul>
           </div>
-          <img
-            className="w-1/3 h-12"
-            src="https://i.postimg.cc/6qR610BC/logo.png"
-            alt=""
-          />
+          <a className="btn btn-ghost text-2xl text-[#fea60d]">The Luxury</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLink}</ul>

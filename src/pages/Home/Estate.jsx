@@ -73,7 +73,7 @@ const Estate = ({ estate }) => {
             </li>
           </ul>
         </div>
-        <Link to='/estateDetails'
+        <Link to={`/estate/${id}`}
           type="button"
           className="inline-block px-5 py-3 font-semibold tracking-wider text-center rounded dark:bg-violet-600 dark:text-gray-50"
         >

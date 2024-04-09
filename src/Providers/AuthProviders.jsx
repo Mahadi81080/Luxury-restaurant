@@ -1,6 +1,6 @@
 import {
-    FacebookAuthProvider,
-    GithubAuthProvider,
+  FacebookAuthProvider,
+  GithubAuthProvider,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -19,8 +19,10 @@ const facebookProvider = new FacebookAuthProvider();
 
 const AuthProviders = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
   // Creat user
   const creatUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
   // Observer
@@ -28,6 +30,7 @@ const AuthProviders = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log("User in the auth state change", currentUser);
       setUser(currentUser);
+      setLoading(false);
     });
     return () => {
       unSubscribe();
@@ -35,32 +38,39 @@ const AuthProviders = ({ children }) => {
   }, []);
   // SingIn account
   const singIn = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
-//   LogOut
-const logOut =()=>{
-return signOut(auth)
-}
+  //   LogOut
+  const logOut = () => {
+    setLoading(true);
+    return signOut(auth);
+  };
   // Google LogIn
   const googleLogin = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
   // GitHubLogIn
   const githubLogin = () => {
+    setLoading(true);
     return signInWithPopup(auth, githubProvider);
   };
   // facebookLogIn
   const facebookLogin = () => {
+    setLoading(true);
     return signInWithPopup(auth, facebookProvider);
   };
 
   const authInfo = {
     user,
+    loading,
     creatUser,
     singIn,
     logOut,
     googleLogin,
-    githubLogin,facebookLogin
+    githubLogin,
+    facebookLogin,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

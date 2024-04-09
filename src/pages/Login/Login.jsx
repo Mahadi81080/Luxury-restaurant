@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link,useLocation,useNavigate } from "react-router-dom";
 import Footer from "../../Components/Footer";
 import Navbar from "../Navbar/Navbar";
 import { useContext, useState } from "react";
@@ -10,6 +10,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation()
+  console.log('Location in the login page',location);
+  const navigate =useNavigate()
   const { singIn, googleLogin, githubLogin,facebookLogin } = useContext(AuthContext);
   const {
     register,
@@ -22,6 +25,7 @@ const Login = () => {
       .then((result) => {
         console.log(result);
         toast.success("Login Successfully");
+        navigate(location?.state? location.state:'/')
       })
       .catch((error) => {
         console.error("Sign-in error:", error);
