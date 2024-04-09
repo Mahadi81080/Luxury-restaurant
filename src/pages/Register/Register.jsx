@@ -123,7 +123,7 @@ const Register = () => {
                 )}
               </div>
               <p className="px-6 text-sm text-center dark:text-gray-600">
-            Go to Login page
+            Go to Login page 
             <Link
               to="/login"
               className="hover:underline dark:text-violet-600"

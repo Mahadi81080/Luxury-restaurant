@@ -1,0 +1,113 @@
+{
+    "estates": [
+      {
+        "id": 1,
+        "estate_title": "Oceanfront Penthouse",
+        "segment_name": "Luxury",
+        "description": "Stunning penthouse offering panoramic views of the Atlantic Ocean. Spacious living areas, private elevator access, and top-notch amenities.",
+        "price": "$10,000,000",
+        "status": "sale",
+        "area": "5000 sq ft",
+        "location": "Miami, Florida",
+        "facilities": ["Private beach access", "Infinity pool", "Spa", "Gym"],
+        "image": "https://i.postimg.cc/XJNLXwwf/images.jpg"
+      },
+      {
+        "id": 2,
+        "estate_title": "Private Island Retreat",
+        "segment_name": "Luxury",
+        "description": "Escape to your own private paradise on this exclusive island. Pristine beaches, lush landscapes, and luxurious accommodations.",
+        "price": "$20,000,000",
+        "status": "sale",
+        "area": "100 acres",
+        "location": "Bahamas",
+        "facilities": ["Private beach", "Villa", "Helipad", "Yacht dock"],
+        "image": "https://i.postimg.cc/1tpnFtQy/download.jpg"
+      },
+      {
+        "id": 3,
+        "estate_title": "Mansion in Beverly Hills",
+        "segment_name": "Luxury",
+        "description": "Magnificent mansion nestled in the heart of Beverly Hills. Lavish interiors, sprawling gardens, and unparalleled privacy.",
+        "price": "$30,000,000",
+        "status": "sale",
+        "area": "15000 sq ft",
+        "location": "Beverly Hills, California",
+        "facilities": ["Home theater", "Wine cellar", "Tennis court", "Gated entrance"],
+        "image": "https://i.postimg.cc/TwgxY5XJ/download-5.jpg"
+      },
+      {
+        "id": 4,
+        "estate_title": "Villa overlooking the Amalfi Coast",
+        "segment_name": "Luxury",
+        "description": "Exquisite villa perched on the cliffs overlooking the breathtaking Amalfi Coast. Elegant design, infinity pool, and panoramic views.",
+        "price": "$15,000,000",
+        "status": "sale",
+        "area": "8000 sq ft",
+        "location": "Amalfi Coast, Italy",
+        "facilities": ["Terrace with jacuzzi", "Gourmet kitchen", "Private beach access", "Gardens"],
+        "image": "https://i.postimg.cc/RCKy3zJG/download-1.jpg"
+      },
+      {
+        "id": 5,
+        "estate_title": "Luxury Penthouse in Manhattan",
+        "segment_name": "Luxury",
+        "description": "Ultra-modern penthouse located in the heart of Manhattan. Floor-to-ceiling windows, sleek design, and breathtaking city views.",
+        "price": "$25,000,000",
+        "status": "sale",
+        "area": "6000 sq ft",
+        "location": "Manhattan, New York",
+        "facilities": ["Private terrace", "Indoor pool", "Home automation system", "Concierge service"],
+        "image": "https://i.postimg.cc/fT5HXWz7/download-2.jpg"
+      },
+      {
+        "id": 6,
+        "estate_title": "Luxury Villa in the French Riviera",
+        "segment_name": "Luxury",
+        "description": "Elegant villa nestled amidst the beauty of the French Riviera. Mediterranean gardens, infinity pool, and stunning sea views.",
+        "price": "$18,000,000",
+        "status": "sale",
+        "area": "7000 sq ft",
+        "location": "French Riviera, France",
+        "facilities": ["Pool house", "Private dock", "Outdoor kitchen", "Gym"],
+        "image": "https://i.postimg.cc/RZNTHcb9/images-2.jpg"
+      },
+      {
+        "id": 7,
+        "estate_title": "Luxury Ski Chalet in Aspen",
+        "segment_name": "Luxury",
+        "description": "Spectacular ski chalet nestled in the exclusive Aspen Highlands. Ski-in/ski-out access, rustic charm, and modern amenities.",
+        "price": "$12,000,000",
+        "status": "sale",
+        "area": "5500 sq ft",
+        "location": "Aspen, Colorado",
+        "facilities": ["Hot tub", "Ski room", "Fireplace", "Home theater"],
+        "image": "https://i.postimg.cc/02HYPz54/images-3.jpg"
+      },
+      {
+        "id": 8,
+        "estate_title": "Luxury Beachfront Villa in Maldives",
+        "segment_name": "Luxury",
+        "description": "Indulge in luxury at this exquisite beachfront villa in the Maldives. Crystal-clear waters, white sandy beaches, and unparalleled tranquility.",
+        "price": "$22,000,000",
+        "status": "sale",
+        "area": "7500 sq ft",
+        "location": "Maldives",
+        "facilities": ["Overwater bungalow", "Private pool", "Sun deck", "Spa"],
+        "image": "https://i.postimg.cc/tgGV4PKB/download-3.jpg"
+      },
+      {
+        "id": 9,
+        "estate_title": "Luxury Castle in Scotland",
+        "segment_name": "Luxury",
+        "description": "Live like royalty in this historic castle nestled amidst the picturesque Scottish countryside. Grand halls, lush gardens, and rich heritage.",
+        "price": "$40,000,000",
+        "status": "sale",
+        "area": "20000 sq ft",
+        "location": "Scotland",
+        "facilities": ["Library", "Ballroom", "Helipad", "Staff quarters"],
+        "image": "https://i.postimg.cc/Gt4pQm0B/download-4.jpg"
+      }
+    ]
+  }
+  
