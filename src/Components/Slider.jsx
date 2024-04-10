@@ -18,18 +18,18 @@ const Slider = () => {
             />
             <div className="absolute top-32 left-80 ">
               <div className="space-y-5 text-center">
-                <h5 className="text-[#ed5b31] font-extrabold">
+                <h5 data-aos="fade-left" data-aos-duration='1000' className="text-[#ed5b31] font-extrabold">
                   _______
                   <span className="text-black font-medium">
                     Luxury Hotel & Best Resort
                   </span>
                   _______
                 </h5>
-                <h2 className="text-4xl font-extrabold font-Gramond text-black">
+                <h2 data-aos="fade-right" data-aos-duration='1500' className="text-4xl font-extrabold font-Gramond text-black">
                   A SYMPHONY OF COMFORT & <br />
                   <span className="text-[#ed5b31]"> CONVENIENCE.</span>
                 </h2>
-                <button className="btn bg-[#ed5b31] text-white px-7 ">
+                <button data-aos="zoom-in" data-aos-duration='1700' className="btn bg-[#ed5b31] text-white px-7 ">
                   Room & Suites
                 </button>
               </div>
@@ -44,18 +44,18 @@ const Slider = () => {
             />
             <div className="absolute top-32 left-80 ">
               <div className="space-y-5 text-center">
-                <h5 className="text-[#ed5b31] font-extrabold">
+                <h5 data-aos="fade-left" data-aos-duration='3000' className="text-[#ed5b31] font-extrabold">
                   _______
                   <span className="text-white font-medium">
                     Luxury Hotel & Best Resort
                   </span>
                   _______
                 </h5>
-                <h2 className="text-4xl font-extrabold font-Gramond text-white">
+                <h2 data-aos="fade-right" data-aos-duration='1500' className="text-4xl font-extrabold font-Gramond text-white">
                   A SYMPHONY OF COMFORT & <br />
                   <span className="text-[#ed5b31]"> CONVENIENCE.</span>
                 </h2>
-                <button className="btn bg-[#ed5b31] text-white px-7 ">
+                <button data-aos="fade-up" data-aos-duration='1700' className="btn bg-[#ed5b31] text-white px-7 ">
                   Room & Suites
                 </button>
               </div>
@@ -70,18 +70,18 @@ const Slider = () => {
             />
             <div className="absolute top-32 left-80 ">
               <div className="space-y-5 text-center">
-                <h5 className="text-[#ed5b31] font-extrabold">
+                <h5 data-aos="fade-left" data-aos-duration='1000' className="text-[#ed5b31] font-extrabold">
                   _______
                   <span className="text-black font-medium">
                     Luxury Hotel & Best Resort
                   </span>
                   _______
                 </h5>
-                <h2 className="text-4xl font-extrabold font-Gramond text-white">
+                <h2 data-aos="fade-right" data-aos-duration='1500' className="text-4xl font-extrabold font-Gramond text-white">
                   A SYMPHONY OF COMFORT & <br />
                   <span className="text-[#ed5b31]"> CONVENIENCE.</span>
                 </h2>
-                <button className="btn bg-[#ed5b31] text-white px-7 ">
+                <button data-aos="fade-up" data-aos-duration='1700' className="btn bg-[#ed5b31] text-white px-7 ">
                   Room & Suites
                 </button>
               </div>
@@ -96,18 +96,18 @@ const Slider = () => {
             />
             <div className="absolute top-32 left-80 ">
               <div className="space-y-5 text-center">
-                <h5 className="text-[#ed5b31] font-extrabold">
+                <h5 data-aos="fade-left" data-aos-duration='1000' className="text-[#ed5b31] font-extrabold">
                   _______
                   <span className="text-black font-medium">
                     Luxury Hotel & Best Resort
                   </span>
                   _______
                 </h5>
-                <h2 className="text-4xl font-extrabold font-Gramond text-white">
+                <h2 data-aos="fade-right" data-aos-duration='1500' className="text-4xl font-extrabold font-Gramond text-white">
                   A SYMPHONY OF COMFORT & <br />
                   <span className="text-[#ed5b31]"> CONVENIENCE.</span>
                 </h2>
-                <button className="btn bg-[#ed5b31] text-white px-7 ">
+                <button data-aos="fade-up" data-aos-duration='1700' className="btn bg-[#ed5b31] text-white px-7 ">
                   Room & Suites
                 </button>
               </div>

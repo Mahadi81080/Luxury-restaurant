@@ -15,7 +15,7 @@ const Estate = ({ estate }) => {
   } = estate;
   return (
     <div>
-      <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-lg dark:bg-gray-50 dark:text-gray-800 my-4">
+      <div data-aos="zoom-in" data-aos-duration='1000' className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-lg dark:bg-gray-50 dark:text-gray-800 my-4">
         <div>
           <img
             src={image}

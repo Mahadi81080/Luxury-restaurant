@@ -22,8 +22,13 @@ const Navbar = () => {
   );
   const [showMenu, setShowMenu] = useState(false);
   return (
-    <div className="px-4">
-      <div className="navbar bg-base-100">
+    <div className=" bg-base-100">
+      <div
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1000"
+        className=" px-10 navbar shadow-md "
+      >
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -49,7 +54,7 @@ const Navbar = () => {
               {navLink}
             </ul>
           </div>
-          <a className="btn btn-ghost text-2xl text-[#ed5b31]">The Luxury</a>
+          <a className="btn btn-ghost text-2xl text-[#ed5b31] ">The Luxury</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLink}</ul>

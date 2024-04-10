@@ -41,7 +41,8 @@ const Register = () => {
     <div>
        <Helmet><title>Register_page</title></Helmet>
       <Navbar></Navbar>
-      <div className="flex justify-center">
+      <div data-aos="zoom-in"
+     data-aos-duration="1500" className="flex justify-center my-3">
         <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800">
           <div className="mb-8 text-center">
             <h1 className="my-3 text-4xl font-bold">Register your account</h1>
