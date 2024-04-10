@@ -37,7 +37,7 @@ const Login = () => {
     <div>
       <Helmet><title>Login_page</title></Helmet>
       <Navbar></Navbar>
-      <div data-aos="zoom-in" data-aos-duration='1000' className="flex justify-center">
+      <div data-aos="zoom-in" data-aos-duration='1000' className="flex justify-center px-5">
         <div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-xl my-3 dark:bg-gray-50 dark:text-gray-800">
           <h1 className="text-2xl font-bold text-center">Login</h1>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

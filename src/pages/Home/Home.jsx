@@ -21,7 +21,7 @@ const Home = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mx-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-5 lg:px-10">
         {/* Estate container */}
         {estates.estates.map((estate) => (
           <Estate key={estate.id} estate={estate}></Estate>

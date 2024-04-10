@@ -21,7 +21,7 @@ const Footer = () => {
               </span>
             </a>
           </div>
-          <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-3">
+          <div className="grid  lg:grid-cols-3 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-3">
             <div className="space-y-3">
               <h3 className=" uppercase text-xl">Navigation</h3>
               <ul className="space-y-1">
@@ -70,7 +70,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="space-y-3 ml-10">
+            <div className="space-y-3 ml-0 md:ml-7 lg:ml-10">
               <div className="uppercase text-xl">Social media</div>
               <div className="flex justify-start space-x-3">
                 <a

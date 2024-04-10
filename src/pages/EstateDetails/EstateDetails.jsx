@@ -15,13 +15,13 @@ const EstateDetails = () => {
         <title>Estate_Details :{id}</title>
       </Helmet>
       <Navbar></Navbar>
-      <div className="px-12">
+      <div className=" px-5 lg:px-10 mt-4">
         <div className="bg-violet-100 p-20 mb-8 text-center font-extrabold text-3xl">
           <h2>Estate Details</h2>
         </div>
         <section className=" text-gray-100">
-          <div className="container flex justify-center items-center flex-col-reverse mx-auto lg:flex-row">
-            <div className="flex flex-col px-6 py-8 space-y-6 rounded-sm sm:p-8 lg:p-12 lg:w-1/3 xl:w-3/5  text-gray-900">
+          <div className="container flex justify-center items-center flex-col mx-auto lg:flex-row">
+            <div className="flex flex-col px-3 py-8 space-y-6 rounded-sm sm:p-8 lg:p-12 lg:w-1/3 xl:w-3/5  text-gray-900">
               <img src={estate.image} alt="" />
               <div className="flex space-x-2 sm:space-x-4">
                 <svg
@@ -46,9 +46,9 @@ const EstateDetails = () => {
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/2 xl:w-2/5 text-black p-5">
+            <div className="w-full lg:w-1/2 xl:w-2/5 text-black p-5">
               <div className=" p-4 md:p-8 lg:p-12 bg-violet-100 rounded-lg">
-                <div className="mb-8 space-y-2">
+                <div className="mb-8 space-y-2 text-center lg:text-left">
                   <div className="border-b border-gray-300 pb-3">
                     <h2 className="text-xl font-extrabold">Estate Details</h2>
                   </div>
@@ -69,7 +69,7 @@ const EstateDetails = () => {
                     {estate.estate_title}
                   </p>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 text-center lg:text-left">
                   <div className="border-b border-gray-300 pb-3">
                     <h2 className="text-xl font-extrabold">
                       Contact Information
