@@ -3,11 +3,15 @@ import Slider from "../../Components/Slider";
 import Navbar from "../Navbar/Navbar";
 import { useLoaderData } from "react-router-dom";
 import Estate from "./Estate";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const estates = useLoaderData();
   return (
     <div className="my-3">
+      <Helmet>
+        <title>The Luxury | Home</title>
+      </Helmet>
       <Navbar></Navbar>
       <Slider></Slider>
       <div className="text-center mt-8">

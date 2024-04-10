@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 
 const Navbar = () => {
+  const { logOut, user } = useContext(AuthContext);
   const navLink = (
     <>
       <li>
@@ -10,16 +11,18 @@ const Navbar = () => {
           Home
         </Link>
       </li>
-      <li>
-        <Link className="font-semibold text-lg" to="/update">
-          Update Profile
-        </Link>
-      </li>
+      {user && (
+        <li>
+          <Link className="font-semibold text-lg" to="/update">
+            Update Profile
+          </Link>
+        </li>
+      )}
     </>
   );
-  const { logOut, user } = useContext(AuthContext);
+  const [showMenu, setShowMenu] = useState(false);
   return (
-    <div className="">
+    <div className="px-4">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -46,40 +49,51 @@ const Navbar = () => {
               {navLink}
             </ul>
           </div>
-          <a className="btn btn-ghost text-2xl text-[#fea60d]">The Luxury</a>
+          <a className="btn btn-ghost text-2xl text-[#ed5b31]">The Luxury</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLink}</ul>
         </div>
         <div className="navbar-end">
           {user?.email ? (
-            <div className="dropdown dropdown-end">
+            <div className="dropdown dropdown-end flex gap-3">
               <div
                 tabIndex={0}
                 role="button"
                 className="btn btn-ghost btn-circle avatar"
+                onMouseEnter={() => setShowMenu(true)}
+                onMouseLeave={() => setShowMenu(false)}
               >
-                <div className="w-10 rounded-full">
+                <div className="w-12 rounded-full">
                   <img
                     alt="Tailwind CSS Navbar component"
-                    src={user?.photoURL || 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'}
+                    src={
+                      user?.photoURL ||
+                      "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    }
                   />
                 </div>
               </div>
               <ul
-                tabIndex={0}
-                className="mt-3 z-[2] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+                className={`mt-14 mr-24 z-[2] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 ${
+                  showMenu ? "block" : "hidden"
+                }`}
               >
                 <li>
-                  <button className="btn btn-sm bg-[#fea60d] text-white">{user?.displayName || "User name not found"}</button>
-                </li>
-                <li className="mt-1">
-                  <button className="btn btn-sm bg-[#fea60d] text-white" onClick={logOut}>Logout</button>
+                  <button className="btn btn-sm bg-[#ed5b31] text-white">
+                    {user?.displayName || "User name not found"}
+                  </button>
                 </li>
               </ul>
+              <button
+                className="btn bg-[#ed5b31] text-white px-5"
+                onClick={logOut}
+              >
+                Logout
+              </button>
             </div>
           ) : (
-            <Link to="/login" className="btn bg-[#fea60d] text-white px-7">
+            <Link to="/login" className="btn bg-[#ed5b31] text-white px-7">
               Sing In
             </Link>
           )}

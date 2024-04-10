@@ -5,6 +5,9 @@ import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../../Components/Footer";
+import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -26,10 +29,14 @@ const UpdateProfile = () => {
   };
   return (
     <div>
-      <div className="flex justify-center">
-        <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800">
+      <Helmet>
+        <title>Update Profile</title>
+      </Helmet>
+      <Navbar></Navbar>
+      <div className="flex justify-center my-3">
+        <div className="flex flex-col max-w-md p-6 rounded-md shadow-lg sm:p-10 dark:bg-gray-50 dark:text-gray-800">
           <div className="mb-8 text-center">
-            <h1 className="my-3 text-4xl font-bold">Register your account</h1>
+            <h1 className="my-3 text-4xl font-bold">Update your account</h1>
           </div>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-12">
             <div className="space-y-4">
@@ -121,6 +128,7 @@ const UpdateProfile = () => {
           <ToastContainer></ToastContainer>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

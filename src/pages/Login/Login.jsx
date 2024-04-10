@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -34,6 +35,7 @@ const Login = () => {
   };
   return (
     <div>
+      <Helmet><title>Login_page</title></Helmet>
       <Navbar></Navbar>
       <div className="flex justify-center">
         <div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-xl my-3 dark:bg-gray-50 dark:text-gray-800">

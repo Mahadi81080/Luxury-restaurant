@@ -1,6 +1,7 @@
 import { useParams, useLoaderData } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../../Components/Footer";
+import { Helmet } from "react-helmet-async";
 const EstateDetails = () => {
   const estates = useLoaderData();
   console.log(estates);
@@ -10,6 +11,9 @@ const EstateDetails = () => {
   console.log(estate);
   return (
     <div>
+      <Helmet>
+        <title>Estate_Details :{id}</title>
+      </Helmet>
       <Navbar></Navbar>
       <div className="px-12">
         <div className="bg-violet-100 p-20 mb-8 text-center font-extrabold text-3xl">
@@ -46,7 +50,7 @@ const EstateDetails = () => {
               <div className=" p-4 md:p-8 lg:p-12 bg-violet-100 rounded-lg">
                 <div className="mb-8 space-y-2">
                   <div className="border-b border-gray-300 pb-3">
-                    <h2 className="text-xl font-extrabold">Job Details</h2>
+                    <h2 className="text-xl font-extrabold">Estate Details</h2>
                   </div>
                   <p>
                     <span className="text-lg font-medium">Segment_name </span>:
