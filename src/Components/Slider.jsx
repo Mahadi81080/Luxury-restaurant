@@ -2,9 +2,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 // import "./styles.css";
-import { Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
+import { useState } from "react";
 
 const Slider = () => {
+  const [ setSwiperRef] = useState(null);
   return (
     <div className="space-y-8 mt-3">
       <div className="space-y-5 text-center">
@@ -17,7 +19,7 @@ const Slider = () => {
           Room & Suites
         </button>
       </div>
-      <Swiper
+      {/* <Swiper
         slidesPerView={4}
         centeredSlides={true}
         spaceBetween={30}
@@ -26,6 +28,79 @@ const Slider = () => {
           clickable: true,
         }}
         modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img
+            className="rounded-3xl"
+            src="https://i.postimg.cc/XJNLXwwf/images.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="rounded-3xl"
+            src="https://i.postimg.cc/1tpnFtQy/download.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="rounded-3xl"
+            src="https://i.postimg.cc/TwgxY5XJ/download-5.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="rounded-3xl"
+            src="https://i.postimg.cc/RCKy3zJG/download-1.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="rounded-3xl"
+            src="https://i.postimg.cc/fT5HXWz7/download-2.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="rounded-3xl"
+            src="https://i.postimg.cc/RZNTHcb9/images-2.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="rounded-3xl"
+            src="https://i.postimg.cc/02HYPz54/images-3.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="rounded-3xl"
+            src="https://i.postimg.cc/tgGV4PKB/download-3.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          
+          <img className="rounded-3xl" src="https://i.postimg.cc/Gt4pQm0B/download-4.jpg" alt="" />
+        </SwiperSlide>
+      </Swiper> */}
+      <Swiper
+        onSwiper={setSwiperRef}
+        slidesPerView={3}
+        centeredSlides={true}
+        spaceBetween={30}
+        pagination={{
+          type: 'fraction',
+        }}
+        navigation={true}
+        modules={[ Navigation]}
         className="mySwiper"
       >
         <SwiperSlide>
