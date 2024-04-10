@@ -33,14 +33,20 @@ const UpdateProfile = () => {
         <title>Update Profile</title>
       </Helmet>
       <Navbar></Navbar>
-      <div  data-aos="zoom-in"
-     data-aos-duration="1500" className="flex justify-center my-3">
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="1500"
+        className="flex justify-center my-3"
+      >
         <div className="flex flex-col max-w-md p-6 rounded-md shadow-lg sm:p-10 dark:bg-gray-50 dark:text-gray-800">
-          <div className="mb-8 text-center">
-            <h1 className="my-3 text-4xl font-bold">Update your account</h1>
+          <div className="mb-3 text-center">
+            <h1 className="my-2 text-xl font-bold">
+              The user information is provided inside the input field given
+              below, you can change it if you want.
+            </h1>
           </div>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-12">
-            <div className="space-y-4">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+            <div className="space-y-2">
               <div>
                 <label htmlFor="text" className="block mb-2 text-sm">
                   Your name
@@ -49,7 +55,7 @@ const UpdateProfile = () => {
                   type="text"
                   name="name"
                   id="name"
-                  placeholder="Your name"
+                  placeholder={user ? user.displayName : "user name not found"}
                   className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
                   {...register("name", { required: true })}
                 />
@@ -65,7 +71,7 @@ const UpdateProfile = () => {
                   type="text"
                   name="photo"
                   id="photo url"
-                  placeholder="Photo URL"
+                  placeholder={user ? user.photoURL : "Not PhotoURL"}
                   className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
                   {...register("image")}
                 />
@@ -81,7 +87,7 @@ const UpdateProfile = () => {
                   type="text"
                   name="email"
                   id="text"
-                  placeholder="leroy@jenkins.com"
+                  placeholder={user ? user.email : "not found email"}
                   className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
                   {...register("email", { required: true })}
                 />
@@ -118,7 +124,7 @@ const UpdateProfile = () => {
                 )}
               </div>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-1">
               <div>
                 <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600">
                   Update Profile
