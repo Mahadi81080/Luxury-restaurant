@@ -8,7 +8,7 @@ Luxury Place epitomizes opulence and sophistication. With lavish accommodations,
 
 ## Documentation
 
-To get started with The Luxury, simply visit our live site [here](https://book-vibe-80.netlify.app/sing) and enjoying all the features our website.
+To get started with The Luxury, simply visit our live site [here](https://luxury-restaurant-df419.web.app) and enjoying all the features our website.
 
 ### Features of Luxury places
 
@@ -25,7 +25,6 @@ To get started with The Luxury, simply visit our live site [here](https://book-v
 - tailwind css
 - React Icos 
 - Daisy Ui
-- Mumba Ui
 - Fake data
 - AOS Package
 - React Hook form
