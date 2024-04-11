@@ -27,18 +27,18 @@ const Estate = ({ estate }) => {
         </div>
         <div className="flex flex-wrap justify-between">
           <div className="flex justify-center items-center space-x-2">
-            <div className="badge badge-outline text-violet-500 font-bold">
+            <div className="badge badge-outline text-[#ed5b31] font-bold">
               {segment_name}
             </div>
-            <div className="badge badge-outline text-violet-500 font-bold">
+            <div className="badge badge-outline text-[#ed5b31]  font-bold">
               {status}
             </div>
           </div>
           <div className="flex justify-center items-center space-x-2">
-            <div className="badge badge-outline text-violet-500 font-bold">
+            <div className="badge badge-outline text-[#ed5b31] font-bold">
               {price}
             </div>
-            <div className="badge badge-outline text-violet-500 font-bold">
+            <div className="badge badge-outline text-[#ed5b31] font-bold">
               {area}
             </div>
           </div>
@@ -74,7 +74,7 @@ const Estate = ({ estate }) => {
         </div>
         <Link to={`/estate/${id}`}
           type="button"
-          className="inline-block px-5 py-3 font-semibold tracking-wider text-center rounded dark:bg-violet-600 dark:text-gray-50"
+          className="inline-block px-5 py-3 font-semibold tracking-wider text-center rounded bg-[#ed5b31] dark:text-gray-50"
         >
           View Property
         </Link>

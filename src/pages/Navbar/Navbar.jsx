@@ -12,12 +12,20 @@ const Navbar = () => {
         </Link>
       </li>
       {user && (
-        <li>
-          <Link className="font-semibold text-lg" to="/update">
-            Update Profile
-          </Link>
-        </li>
-      )}
+  <>
+    <li>
+      <Link className="font-semibold text-lg" to="/update">
+        Update Profile
+      </Link>
+    </li>
+    <li>
+      <Link className="font-semibold text-lg" to="/extra">
+        About Us
+      </Link>
+    </li>
+  </>
+)}
+
     </>
   );
   const [showMenu, setShowMenu] = useState(false);

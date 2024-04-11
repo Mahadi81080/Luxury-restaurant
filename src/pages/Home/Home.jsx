@@ -4,6 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import { useLoaderData } from "react-router-dom";
 import Estate from "./Estate";
 import { Helmet } from "react-helmet-async";
+import DailyPricing from "../../Components/DailyPricing";
 
 const Home = () => {
   const estates = useLoaderData();
@@ -27,6 +28,7 @@ const Home = () => {
           <Estate key={estate.id} estate={estate}></Estate>
         ))}
       </div>
+      <DailyPricing></DailyPricing>
       <Footer></Footer>
     </div>
   );
