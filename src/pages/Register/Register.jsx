@@ -29,7 +29,7 @@ const Register = () => {
     creatUser(email, password)
       .then((result) => {
         console.log(result);
-        toast.success("Registration successful!");
+        toast.success("Registration successful!")
       })
       .catch((error) => {
         console.log(error);

@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../../Components/Footer";
 import { Helmet } from "react-helmet-async";
@@ -22,9 +21,11 @@ const UpdateProfile = () => {
     updateUserProfile(name, image)
       .then((result) => {
         console.log("update profile", result);
+        toast.success("Your Profile update");
       })
       .catch((error) => {
         console.log(error);
+        toast.error("An error occurred during Update Profile.");
       });
   };
   return (
@@ -132,10 +133,10 @@ const UpdateProfile = () => {
               </div>
             </div>
           </form>
-          <ToastContainer></ToastContainer>
         </div>
       </div>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 };
